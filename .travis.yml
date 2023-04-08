@@ -19,5 +19,5 @@ script:
   - docker tag simple_node_travis_ci hungdoan2023/simple_node_travis_ci:latest
 
 after_success:
-  - docker login -u ${DOCKER_USERNAME} --password-stdin ${DOCKER_PASSWORD}
+  - echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin
   - docker push hungdoan2023/simple_node_travis_ci
